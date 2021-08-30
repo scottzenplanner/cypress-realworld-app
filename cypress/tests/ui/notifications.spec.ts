@@ -149,6 +149,7 @@ describe("Notifications", function () {
 
       cy.wait("@getNotifications");
 
+      cy.getBySel("list-skeleton").should("not.exist");
       cy.getBySelLike("notification-list-item")
         .should("have.length", 9)
         .first()
